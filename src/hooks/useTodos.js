@@ -1,15 +1,13 @@
 import { useEffect, useReducer } from "react"
 import { todoReducer } from "../08-useReducer/todoReducer"
 
-const initialState = []
-
 const init = () => {
     return JSON.parse(localStorage.getItem('todo')) || [] 
 }
 
 export const useTodos = () =>{
 
-    const [todo, dispatch] = useReducer(todoReducer, initialState, init)
+    const [todo, dispatch] = useReducer(todoReducer, [], init)
     
     useEffect(() => {
         localStorage.setItem('todo', JSON.stringify(todo))
@@ -38,11 +36,23 @@ export const useTodos = () =>{
         }
         dispatch(action)
     }
+    const todoCount = ( todo ) => {
+        const action = {
+            type: '[TODO] Counter todo',
+            payload: todo
+        }
+        dispatch(action)
+    }
+    const pendingTodoCount = () => {
+        //return todo.filter( todos => !todos.done).length
+    }
     
     return {
         todo, 
         handleNewTodo,
         handleDeleteTodo,
-        handleToggleTodo
+        handleToggleTodo,
+        todoCount, 
+        pendingTodoCount
     }
 }

@@ -1,16 +1,16 @@
-import React, { useEffect, useReducer } from 'react'
-import { useTodos } from '../hooks/useTodos'
+import React from 'react'
+import { useTodos } from '../hooks'
 import { TodoAdd } from './TodoAdd'
 import { TodoList } from './TodoList'
 
 
 export const TodoApp = () => {
-    
-    const {todo, handleDeleteTodo, handleToggleTodo, handleNewTodo } = useTodos()
-    
+    //todoCounter, todoPendientes
+    const {todo, todoCount, pendingTodoCount, handleDeleteTodo, handleToggleTodo, handleNewTodo } = useTodos()
+
     return (
     <>
-        <h1>TodoApp 10, <small>pendientes: 2</small> </h1>
+        <h1>TodoApp {todoCount}, <small>pendientes: {pendingTodoCount} </small> </h1>
         <hr/>
         <div  className="row">
             <div className="col-7">
