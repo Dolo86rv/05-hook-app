@@ -17,9 +17,6 @@ export const todoReducer = (initialState = [], action) => {
                 }
                 return todo
             })
-        case '[TODO] Counter todo':
-            return initialState.length
-        
         default:
             return initialState
     }

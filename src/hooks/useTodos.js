@@ -36,15 +36,11 @@ export const useTodos = () =>{
         }
         dispatch(action)
     }
-    const todoCount = ( todo ) => {
-        const action = {
-            type: '[TODO] Counter todo',
-            payload: todo
-        }
-        dispatch(action)
+    const todoCount = () => {
+        return todo.length
     }
     const pendingTodoCount = () => {
-        //return todo.filter( todos => !todos.done).length
+        return todo.filter( todos => !todos.done).length
     }
     
     return {

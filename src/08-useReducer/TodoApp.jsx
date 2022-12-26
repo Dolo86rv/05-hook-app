@@ -7,10 +7,14 @@ import { TodoList } from './TodoList'
 export const TodoApp = () => {
     //todoCounter, todoPendientes
     const {todo, todoCount, pendingTodoCount, handleDeleteTodo, handleToggleTodo, handleNewTodo } = useTodos()
+    
+    const count = todoCount()
 
+    const countPending = pendingTodoCount()
+    
     return (
     <>
-        <h1>TodoApp {todoCount}, <small>pendientes: {pendingTodoCount} </small> </h1>
+        <h1>TodoApp {count}, <small>pendientes: {countPending} </small> </h1>
         <hr/>
         <div  className="row">
             <div className="col-7">

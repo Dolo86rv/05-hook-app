@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 //import { CounterApp } from './01-useState/CounterApp'
 //import { CounterWithCustomHooks } from './01-useState/CounterWithCustomHooks'
 //import { FormWithCustomHook } from './02-useEfect/FormWithCustomHook'
@@ -10,11 +11,12 @@ import React from 'react'
 //import { MemoHook } from './06-memos/MemoHook'
 //import { Memorize } from './06-memos/Memorize'
 //import { Padre } from './07-tarea-memo/Padre'
-import { TodoApp } from './08-useReducer/TodoApp'
+//import { TodoApp } from './08-useReducer/TodoApp'
+import { MainApp } from './09-useContext/MainApp'
 
 export const HooksApp = () => {
   return (
-    <>
+    <BrowserRouter>
       {/*<CounterApp />
       <hr/>
       <hr/>
@@ -47,9 +49,9 @@ export const HooksApp = () => {
       <hr/>
       <Padre />
       <hr/>
-      <hr/>*/}
-      <TodoApp />
-    </>
-    
+      <hr/>
+      <TodoApp />*/}
+      <MainApp />
+    </BrowserRouter>
   )
 }
