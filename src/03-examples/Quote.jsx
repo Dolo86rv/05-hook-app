@@ -18,7 +18,9 @@ export const Quote = ({characters, episodes, quotes }) => {
       <blockquote className="blockquote tex-end" style={{display: 'flex-column'}}>
         <p ref={pRef} className="mb-1">{characters}</p>
         <p>{episodes}</p>
-        <footer>{quotes}</footer>
+        <footer className="blockquote-footer">
+          {quotes}
+        </footer>
       </blockquote>
       <code>
         {JSON.stringify(boxSize)}
