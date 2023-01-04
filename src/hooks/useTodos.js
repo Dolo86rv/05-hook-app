@@ -6,7 +6,8 @@ const init = () => {
 }
 
 export const useTodos = () =>{
-
+    const todoCount = 0
+    const pendingTodoCount = 0
     const [todo, dispatch] = useReducer(todoReducer, [], init)
     
     useEffect(() => {
@@ -36,19 +37,19 @@ export const useTodos = () =>{
         }
         dispatch(action)
     }
-    const todoCount = () => {
+    /*const todoCount = () => {
         return todo.length
     }
     const pendingTodoCount = () => {
         return todo.filter( todos => !todos.done).length
-    }
+    }*/
     
     return {
         todo, 
         handleNewTodo,
         handleDeleteTodo,
         handleToggleTodo,
-        todoCount, 
-        pendingTodoCount
+        todoCount: todo.length, 
+        pendingTodoCount: todo.filter( todos => !todos.done).length
     }
 }
